@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://testecomm.sella.it/gestpay/gestpayws/WSCryptDecrypt.asmx?WSDL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 17 May 2013 09:39:31 GMT
+      Server:
+      - Microsoft-IIS/6.0
+      P3p:
+      - CP="ALL IND"
+      X-Powered-By:
+      - ASP.NET
+      X-Aspnet-Version:
+      - 4.0.30319
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '6094'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<wsdl:definitions xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\"
+        xmlns:tm=\"http://microsoft.com/wsdl/mime/textMatching/\" xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        xmlns:mime=\"http://schemas.xmlsoap.org/wsdl/mime/\" xmlns:tns=\"https://ecomm.sella.it/\"
+        xmlns:s=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://schemas.xmlsoap.org/wsdl/soap12/\"
+        xmlns:http=\"http://schemas.xmlsoap.org/wsdl/http/\" targetNamespace=\"https://ecomm.sella.it/\"
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">\r\n  <wsdl:types>\r\n    <s:schema
+        elementFormDefault=\"qualified\" targetNamespace=\"https://ecomm.sella.it/\">\r\n
+        \     <s:element name=\"Encrypt\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"shopLogin\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"uicCode\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"amount\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"shopTransactionId\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"cardNumber\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"expiryMonth\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"expiryYear\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"buyerName\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"buyerEmail\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"languageId\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"cvv\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"customInfo\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"requestToken\"
+        type=\"s:string\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"EncryptResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"EncryptResult\">\r\n              <s:complexType mixed=\"true\">\r\n
+        \               <s:sequence>\r\n                  <s:any />\r\n                </s:sequence>\r\n
+        \             </s:complexType>\r\n            </s:element>\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"Decrypt\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"shopLogin\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"CryptedString\"
+        type=\"s:string\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"DecryptResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"DecryptResult\">\r\n              <s:complexType mixed=\"true\">\r\n
+        \               <s:sequence>\r\n                  <s:any />\r\n                </s:sequence>\r\n
+        \             </s:complexType>\r\n            </s:element>\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n    </s:schema>\r\n  </wsdl:types>\r\n
+        \ <wsdl:message name=\"EncryptSoapIn\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:Encrypt\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"EncryptSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:EncryptResponse\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"DecryptSoapIn\">\r\n    <wsdl:part
+        name=\"parameters\" element=\"tns:Decrypt\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"DecryptSoapOut\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:DecryptResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:portType name=\"WSCryptDecryptSoap\">\r\n
+        \   <wsdl:operation name=\"Encrypt\">\r\n      <wsdl:input message=\"tns:EncryptSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:EncryptSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"Decrypt\">\r\n      <wsdl:input message=\"tns:DecryptSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:DecryptSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \ </wsdl:portType>\r\n  <wsdl:binding name=\"WSCryptDecryptSoap\" type=\"tns:WSCryptDecryptSoap\">\r\n
+        \   <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n
+        \   <wsdl:operation name=\"Encrypt\">\r\n      <soap:operation soapAction=\"https://ecomm.sella.it/Encrypt\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"Decrypt\">\r\n      <soap:operation soapAction=\"https://ecomm.sella.it/Decrypt\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:binding name=\"WSCryptDecryptSoap12\" type=\"tns:WSCryptDecryptSoap\">\r\n
+        \   <soap12:binding transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n
+        \   <wsdl:operation name=\"Encrypt\">\r\n      <soap12:operation soapAction=\"https://ecomm.sella.it/Encrypt\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"Decrypt\">\r\n      <soap12:operation soapAction=\"https://ecomm.sella.it/Decrypt\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:service name=\"WSCryptDecrypt\">\r\n    <wsdl:port name=\"WSCryptDecryptSoap\"
+        binding=\"tns:WSCryptDecryptSoap\">\r\n      <soap:address location=\"https://testecomm.sella.it/gestpay/gestpayws/WSCryptDecrypt.asmx\"
+        />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"WSCryptDecryptSoap12\" binding=\"tns:WSCryptDecryptSoap12\">\r\n
+        \     <soap12:address location=\"https://testecomm.sella.it/gestpay/gestpayws/WSCryptDecrypt.asmx\"
+        />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
+    http_version: 
+  recorded_at: Fri, 17 May 2013 09:39:31 GMT
+- request:
+    method: post
+    uri: https://testecomm.sella.it/gestpay/gestpayws/WSCryptDecrypt.asmx
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ecomm.sella.it/"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:Decrypt><tns:shopLogin>GESPAY57135</tns:shopLogin><tns:CryptedString>KFzOej9MGr*lXEe*LOB2wzLmHja3ghKAo3iMpR1pG35moFdejWKzAj1Zd*R_e0x8qyOSTQmZVGRXEzJMVzd9xRXS*7tkbQLPOuBZ7qAtoFsX2Fxks5HxY*3YsUeiOInUXNF7*ih1bzkwmYGchDqYnEi31rN8ZYwLHnjwMIEmWJNn7oJHE6RpfUHG*7qohDxZRto*VVTPFdM93CwECq7SdYLebAQ_9EefdcE90QCRcFdGxZp_yAr_t*YRgLcZ5B5j843krtjCvf_m8nS99CroJQ768XsvlXy29McM2G*369mTufGyGMRab5PIvJlpSd3ds6mGi1IoMJAyXVkCu_ygRDDXN5Fk4Hz58LrDIci4ZszyVRcqy56SeYV7eG*kG8LZV40WV2ey8Qeh8XDUZnCV3A</tns:CryptedString></tns:Decrypt></env:Body></env:Envelope>
+    headers:
+      Soapaction:
+      - '"https://ecomm.sella.it/Decrypt"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '791'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 17 May 2013 09:39:31 GMT
+      Server:
+      - Microsoft-IIS/6.0
+      P3p:
+      - CP="ALL IND"
+      X-Powered-By:
+      - ASP.NET
+      X-Aspnet-Version:
+      - 4.0.30319
+      Set-Cookie:
+      - ASP.NET_SessionId=1l1uxfvrg3sn001u5nlavg05; path=/; HttpOnly
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '1019'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><DecryptResponse
+        xmlns="https://ecomm.sella.it/"><DecryptResult><GestPayCryptDecrypt xmlns=""><TransactionType>DECRYPT</TransactionType><TransactionResult>KO</TransactionResult><ShopTransactionID>321_KO</ShopTransactionID><BankTransactionID>6</BankTransactionID><AuthorizationCode></AuthorizationCode><Currency>242</Currency><Amount>0.01</Amount><Country></Country><CustomInfo></CustomInfo><Buyer><BuyerName>Test
+        Customer</BuyerName><BuyerEmail>test@example.com</BuyerEmail></Buyer><ErrorCode>74</ErrorCode><ErrorDescription>Autorizzazione
+        negata</ErrorDescription><AlertCode></AlertCode><AlertDescription></AlertDescription><VbVRisp></VbVRisp><VbVBuyer></VbVBuyer><VbVFlag></VbVFlag><TransactionKey></TransactionKey></GestPayCryptDecrypt></DecryptResult></DecryptResponse></soap:Body></soap:Envelope>
+    http_version: 
+  recorded_at: Fri, 17 May 2013 09:39:31 GMT
+recorded_with: VCR 2.4.0

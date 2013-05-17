@@ -3,7 +3,7 @@ module Gestpay
 
     attr_accessor :environment, :account
     def initialize
-      @environment = ENV['GESTPAY_ENVIRONMENT']
+      @environment = ENV['GESTPAY_ENVIRONMENT'] || :test
       @account = ENV['GESTPAY_ACCOUNT']
     end
 
