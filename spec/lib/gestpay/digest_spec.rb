@@ -1,4 +1,4 @@
-require (File.expand_path('./../../spec_helper', __FILE__))
+require (File.expand_path('../../../spec_helper', __FILE__))
 # For Ruby > 1.9.3, use this instead of require
 # require_relative '../../spec_helper'
 
