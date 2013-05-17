@@ -1,6 +1,9 @@
 # Gestpay
 
-TODO: Write a gem description
+[![Build Status](https://travis-ci.org/momitians/gestpay.png?branch=master)](https://travis-ci.org/momitians/gestpay)
+[![Code Climate](https://codeclimate.com/github/momitians/gestpay.png)](https://codeclimate.com/github/momitians/gestpay)
+
+Service wrapper for BancaSella Gestpay interface.
 
 ## Installation
 
@@ -27,3 +30,7 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Licence
+
+Released under the [MIT License](http://www.opensource.org/licenses/MIT). © 2013 [Momit S.r.l.](http://momit.it/)
