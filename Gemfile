@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'savon', '~> 2.2.0'
+gem 'activesupport', '~> 3.2.13'
 
 group :test do
   # gem 'factory_girl', '~> 4.2.0'

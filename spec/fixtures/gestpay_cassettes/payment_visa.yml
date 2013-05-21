@@ -1,0 +1,395 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx?WSDL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 21 May 2013 13:18:19 GMT
+      Server:
+      - Microsoft-IIS/6.0
+      P3p:
+      - CP="ALL IND"
+      X-Powered-By:
+      - ASP.NET
+      X-Aspnet-Version:
+      - 4.0.30319
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '23531'
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<wsdl:definitions xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\"
+        xmlns:tm=\"http://microsoft.com/wsdl/mime/textMatching/\" xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        xmlns:mime=\"http://schemas.xmlsoap.org/wsdl/mime/\" xmlns:tns=\"https://ecomms2s.sella.it/\"
+        xmlns:s=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://schemas.xmlsoap.org/wsdl/soap12/\"
+        xmlns:http=\"http://schemas.xmlsoap.org/wsdl/http/\" targetNamespace=\"https://ecomms2s.sella.it/\"
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">\r\n  <wsdl:types>\r\n    <s:schema
+        elementFormDefault=\"qualified\" targetNamespace=\"https://ecomms2s.sella.it/\">\r\n
+        \     <s:element name=\"callRefundS2S\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"shopLogin\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"uicCode\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"amount\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"shopTransactionId\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"bankTransactionId\"
+        type=\"s:string\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"callRefundS2SResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"callRefundS2SResult\">\r\n              <s:complexType
+        mixed=\"true\">\r\n                <s:sequence>\r\n                  <s:any
+        />\r\n                </s:sequence>\r\n              </s:complexType>\r\n
+        \           </s:element>\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"callReadTrxS2S\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"shopLogin\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"shopTransactionId\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"bankTransactionId\" type=\"s:string\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"callReadTrxS2SResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"callReadTrxS2SResult\">\r\n              <s:complexType mixed=\"true\">\r\n
+        \               <s:sequence>\r\n                  <s:any />\r\n                </s:sequence>\r\n
+        \             </s:complexType>\r\n            </s:element>\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"callPagamS2S\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"shopLogin\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"uicCode\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"amount\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"shopTransactionId\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"cardNumber\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"expiryMonth\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"expiryYear\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"buyerName\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"buyerEmail\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"languageId\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"cvv\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"min\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"transKey\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"PARes\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"customInfo\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"IDEA\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"requestToken\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"tokenValue\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"callPagamS2SResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"callPagamS2SResult\">\r\n              <s:complexType mixed=\"true\">\r\n
+        \               <s:sequence>\r\n                  <s:any />\r\n                </s:sequence>\r\n
+        \             </s:complexType>\r\n            </s:element>\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"callDeleteS2S\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"shopLogin\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"shopTransactionId\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"bankTransactionId\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"callDeleteS2SResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"callDeleteS2SResult\">\r\n              <s:complexType
+        mixed=\"true\">\r\n                <s:sequence>\r\n                  <s:any
+        />\r\n                </s:sequence>\r\n              </s:complexType>\r\n
+        \           </s:element>\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"callSettleS2S\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"shopLogin\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"uicCode\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"amount\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"shopTransID\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"bankTransID\"
+        type=\"s:string\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"callSettleS2SResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"callSettleS2SResult\">\r\n              <s:complexType
+        mixed=\"true\">\r\n                <s:sequence>\r\n                  <s:any
+        />\r\n                </s:sequence>\r\n              </s:complexType>\r\n
+        \           </s:element>\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"callVerifycardS2S\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"shopLogin\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"shopTransactionId\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"cardNumber\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"expMonth\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"expYear\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"CVV2\" type=\"s:string\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"callVerifycardS2SResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"callVerifycardS2SResult\">\r\n              <s:complexType
+        mixed=\"true\">\r\n                <s:sequence>\r\n                  <s:any
+        />\r\n                </s:sequence>\r\n              </s:complexType>\r\n
+        \           </s:element>\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"callCheckCartaS2S\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"shopLogin\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"shopTransactionId\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"cardNumber\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"expMonth\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"expYear\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"CVV2\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"withAuth\" type=\"s:string\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"callCheckCartaS2SResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"callCheckCartaS2SResult\">\r\n              <s:complexType
+        mixed=\"true\">\r\n                <s:sequence>\r\n                  <s:any
+        />\r\n                </s:sequence>\r\n              </s:complexType>\r\n
+        \           </s:element>\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"callRenounce\">\r\n        <s:complexType
+        />\r\n      </s:element>\r\n      <s:element name=\"callRenounceResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"callRenounceResult\">\r\n              <s:complexType
+        mixed=\"true\">\r\n                <s:sequence>\r\n                  <s:any
+        />\r\n                </s:sequence>\r\n              </s:complexType>\r\n
+        \           </s:element>\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"CallRequestTokenS2S\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"shopLogin\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"requestToken\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"cardNumber\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"expiryMonth\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"expiryYear\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"cvv\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"withAuth\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"CallRequestTokenS2SResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"CallRequestTokenS2SResult\">\r\n              <s:complexType mixed=\"true\">\r\n
+        \               <s:sequence>\r\n                  <s:any />\r\n                </s:sequence>\r\n
+        \             </s:complexType>\r\n            </s:element>\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"callDeleteTokenS2S\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"tokenValue\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"shopLogin\"
+        type=\"s:string\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"callDeleteTokenS2SResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"callDeleteTokenS2SResult\">\r\n              <s:complexType
+        mixed=\"true\">\r\n                <s:sequence>\r\n                  <s:any
+        />\r\n                </s:sequence>\r\n              </s:complexType>\r\n
+        \           </s:element>\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n    </s:schema>\r\n  </wsdl:types>\r\n  <wsdl:message
+        name=\"callRefundS2SSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:callRefundS2S\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"callRefundS2SSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:callRefundS2SResponse\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"callReadTrxS2SSoapIn\">\r\n    <wsdl:part
+        name=\"parameters\" element=\"tns:callReadTrxS2S\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"callReadTrxS2SSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:callReadTrxS2SResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"callPagamS2SSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:callPagamS2S\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"callPagamS2SSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:callPagamS2SResponse\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"callDeleteS2SSoapIn\">\r\n    <wsdl:part
+        name=\"parameters\" element=\"tns:callDeleteS2S\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"callDeleteS2SSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:callDeleteS2SResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"callSettleS2SSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:callSettleS2S\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"callSettleS2SSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:callSettleS2SResponse\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"callVerifycardS2SSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:callVerifycardS2S\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"callVerifycardS2SSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:callVerifycardS2SResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"callCheckCartaS2SSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:callCheckCartaS2S\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"callCheckCartaS2SSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:callCheckCartaS2SResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"callRenounceSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:callRenounce\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"callRenounceSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:callRenounceResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"CallRequestTokenS2SSoapIn\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:CallRequestTokenS2S\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"CallRequestTokenS2SSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:CallRequestTokenS2SResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"callDeleteTokenS2SSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:callDeleteTokenS2S\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"callDeleteTokenS2SSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:callDeleteTokenS2SResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:portType name=\"WSs2sSoap\">\r\n    <wsdl:operation
+        name=\"callRefundS2S\">\r\n      <wsdl:input message=\"tns:callRefundS2SSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:callRefundS2SSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"callReadTrxS2S\">\r\n      <wsdl:input message=\"tns:callReadTrxS2SSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:callReadTrxS2SSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"callPagamS2S\">\r\n      <wsdl:input message=\"tns:callPagamS2SSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:callPagamS2SSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"callDeleteS2S\">\r\n      <wsdl:input message=\"tns:callDeleteS2SSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:callDeleteS2SSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"callSettleS2S\">\r\n      <wsdl:input message=\"tns:callSettleS2SSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:callSettleS2SSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"callVerifycardS2S\">\r\n      <wsdl:input message=\"tns:callVerifycardS2SSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:callVerifycardS2SSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"callCheckCartaS2S\">\r\n      <wsdl:input message=\"tns:callCheckCartaS2SSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:callCheckCartaS2SSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"callRenounce\">\r\n      <wsdl:input message=\"tns:callRenounceSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:callRenounceSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"CallRequestTokenS2S\">\r\n      <wsdl:input message=\"tns:CallRequestTokenS2SSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:CallRequestTokenS2SSoapOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"callDeleteTokenS2S\">\r\n
+        \     <wsdl:input message=\"tns:callDeleteTokenS2SSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:callDeleteTokenS2SSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \ </wsdl:portType>\r\n  <wsdl:binding name=\"WSs2sSoap\" type=\"tns:WSs2sSoap\">\r\n
+        \   <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n
+        \   <wsdl:operation name=\"callRefundS2S\">\r\n      <soap:operation soapAction=\"https://ecomms2s.sella.it/callRefundS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callReadTrxS2S\">\r\n      <soap:operation soapAction=\"https://ecomms2s.sella.it/callReadTrxS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callPagamS2S\">\r\n      <soap:operation soapAction=\"https://ecomms2s.sella.it/callPagamS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callDeleteS2S\">\r\n      <soap:operation soapAction=\"https://ecomms2s.sella.it/callDeleteS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callSettleS2S\">\r\n      <soap:operation soapAction=\"https://ecomms2s.sella.it/callSettleS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callVerifycardS2S\">\r\n      <soap:operation soapAction=\"https://ecomms2s.sella.it/callVerifycardS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callCheckCartaS2S\">\r\n      <soap:operation soapAction=\"https://ecomms2s.sella.it/callCheckCartaS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callRenounce\">\r\n      <soap:operation soapAction=\"https://ecomms2s.sella.it/callRenounce\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"CallRequestTokenS2S\">\r\n      <soap:operation soapAction=\"https://ecomms2s.sella.it/CallRequestTokenS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callDeleteTokenS2S\">\r\n      <soap:operation soapAction=\"https://ecomms2s.sella.it/callDeleteTokenS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:binding name=\"WSs2sSoap12\" type=\"tns:WSs2sSoap\">\r\n    <soap12:binding
+        transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n    <wsdl:operation
+        name=\"callRefundS2S\">\r\n      <soap12:operation soapAction=\"https://ecomms2s.sella.it/callRefundS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callReadTrxS2S\">\r\n      <soap12:operation soapAction=\"https://ecomms2s.sella.it/callReadTrxS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callPagamS2S\">\r\n      <soap12:operation soapAction=\"https://ecomms2s.sella.it/callPagamS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callDeleteS2S\">\r\n      <soap12:operation soapAction=\"https://ecomms2s.sella.it/callDeleteS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callSettleS2S\">\r\n      <soap12:operation soapAction=\"https://ecomms2s.sella.it/callSettleS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callVerifycardS2S\">\r\n      <soap12:operation soapAction=\"https://ecomms2s.sella.it/callVerifycardS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callCheckCartaS2S\">\r\n      <soap12:operation soapAction=\"https://ecomms2s.sella.it/callCheckCartaS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callRenounce\">\r\n      <soap12:operation soapAction=\"https://ecomms2s.sella.it/callRenounce\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"CallRequestTokenS2S\">\r\n      <soap12:operation soapAction=\"https://ecomms2s.sella.it/CallRequestTokenS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"callDeleteTokenS2S\">\r\n      <soap12:operation soapAction=\"https://ecomms2s.sella.it/callDeleteTokenS2S\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:service name=\"WSs2s\">\r\n    <wsdl:port name=\"WSs2sSoap\" binding=\"tns:WSs2sSoap\">\r\n
+        \     <soap:address location=\"https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx\"
+        />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"WSs2sSoap12\" binding=\"tns:WSs2sSoap12\">\r\n
+        \     <soap12:address location=\"https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx\"
+        />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
+    http_version:
+  recorded_at: Tue, 21 May 2013 13:18:19 GMT
+- request:
+    method: post
+    uri: https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ecomms2s.sella.it/"
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:callPagamS2S><tns:shopLogin>GESPAY57135</tns:shopLogin><tns:uicCode>242</tns:uicCode><tns:languageId>1</tns:languageId><tns:amount>1.52</tns:amount><tns:shopTransactionId>12</tns:shopTransactionId><tns:cardNumber>4556541926187165</tns:cardNumber><tns:expiryMonth>12</tns:expiryMonth><tns:expiryYear>20</tns:expiryYear><tns:cvv>123</tns:cvv><tns:buyerName>Test
+        Customer</tns:buyerName><tns:buyerEmail>test@example.com</tns:buyerEmail><tns:customInfo>payment_id=15*P1*user_id=12</tns:customInfo></tns:callPagamS2S></env:Body></env:Envelope>
+    headers:
+      Soapaction:
+      - '"https://ecomms2s.sella.it/callPagamS2S"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '797'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 21 May 2013 13:18:25 GMT
+      Server:
+      - Microsoft-IIS/6.0
+      P3p:
+      - CP="ALL IND"
+      X-Powered-By:
+      - ASP.NET
+      X-Aspnet-Version:
+      - 4.0.30319
+      Set-Cookie:
+      - ASP.NET_SessionId=vwmpo0lkpbhyyoijcdd5iaj0; path=/; HttpOnly
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '1882'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><callPagamS2SResponse
+        xmlns="https://ecomms2s.sella.it/"><callPagamS2SResult><GestPayS2S xmlns=""><TransactionType>PAGAM</TransactionType><TransactionResult>KO</TransactionResult><ShopTransactionID></ShopTransactionID><BankTransactionID></BankTransactionID><AuthorizationCode></AuthorizationCode><Currency></Currency><Amount></Amount><Country></Country><Buyer><BuyerName></BuyerName><BuyerEmail></BuyerEmail></Buyer><CustomInfo></CustomInfo><ErrorCode>8006</ErrorCode><ErrorDescription>Verify
+        By Visa</ErrorDescription><AlertCode></AlertCode><AlertDescription></AlertDescription><TransactionKey>987654321</TransactionKey><VbV><VbVFlag></VbVFlag><VbVBuyer>OK</VbVBuyer><VbVRisp>mRTLDNghVNbEYcEsmpi5WTNwD5XIrf2NKbO8iVRXYd5we9*K*c8_NlT4SyhvJTJX9T*nfuFIuespRT5ewC06FPhZ3JT4YJGn25_SWp54Sa3*t4FLBBmpP12JGE7YwEYkOxpBJgFegka4yVLJwYQRdci8863vvpadIYpIMlBuQ0PP0J1*5uCNEkDl_hNp527gjGfXgElzm5*kSPJNlns1tlJ_FXMo53GG23OD4uov9ZK6VaII7uNuwh9h8wRCQnIyEBAYcph*62t_7mY5I1UW2WI50I*bmtUS4*bpiYyHl8ETLhT0uTTcrfl9YbswZ3_JnSmetU4Lp0*IQ40Hu9caUzFnn0MBX*T2jqYG7i1mkNJISOdlj1OnmPOz9a*bJSB8pfN9i9uDq3ikhLfIieIaHHHSX5ZSlWfKolh*VKzz2IDPdB5BKwCA1n7cU00rvwrcq2PrLYod0OlnfwvfiV03BbLnxphy53Y2fAiokj6HWsoHzynJG3Sd6zDImfABXrKotAxQmxXhF_XxrhPjT_eSzCg6DfqU1eIiZVRXx2Vf_hZcY3Fdpp8BKteBzMqZ77U3owwJu5Wx3r91N6kUd*jB0RyxWcm3KwGkdyrkgSyo*Sg4wFMWyxjkQbl1_vAIZk7Psy0Re*W19IMaoJMyM*b8uMxB7vwOjcJdWQpvZ0bctWnnzFdLQaWuEYjyEPts48bFBtItWEJ2SThmyOio1s1J_1mE_LKI0V*4nCyICVyvQLce1xniD62p0UgvkRHK61Mi</VbVRisp></VbV><PaymentMethod></PaymentMethod><TOKEN></TOKEN><TokenExpiryMonth></TokenExpiryMonth><TokenExpiryYear></TokenExpiryYear></GestPayS2S></callPagamS2SResult></callPagamS2SResponse></soap:Body></soap:Envelope>
+    http_version:
+  recorded_at: Tue, 21 May 2013 13:18:25 GMT
+recorded_with: VCR 2.4.0
