@@ -2,7 +2,7 @@ module Gestpay
   module Error
     class VerifyVisa < StandardError
 
-      attr_accessor :result, :crypted_response
+      attr_reader :result, :crypted_response, :transaction_key
 
       def initialize(info)
         @transaction_key = info[:transaction_key]
