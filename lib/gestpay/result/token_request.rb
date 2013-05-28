@@ -2,7 +2,7 @@ module Gestpay
   module Result
     class TokenRequest < Gestpay::Result::Base
       def error
-        "Error #{data[:transaction_error_code]}: #{data[:transaction_error_description]}"
+        "Error #{ transaction_error_code }: #{ transaction_error_description }" if transaction_error_code
       end
     end
   end

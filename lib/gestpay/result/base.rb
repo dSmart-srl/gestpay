@@ -9,7 +9,7 @@ module Gestpay
       end
 
       def success?
-        data[:transaction_result] == 'OK'
+        transaction_result == 'OK'
       end
 
       def error
