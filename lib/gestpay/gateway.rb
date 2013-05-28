@@ -1,22 +1,20 @@
 module Gestpay
   class Gateway
 
+    URL = {
+      :test       => 'https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx?WSDL',
+      :production => 'https://ecomms2s.sella.it/gestpay/gestpayws/WSs2s.asmx?WSDL'
+    }
+
     def config
       Gestpay.config
     end
 
     attr_accessor :client
     def initialize
-      url = case Gestpay.config.environment
-      when :test
-        'https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx?WSDL'
-      when :production
-        'https://ecomms2s.sella.it/gestpay/gestpayws/WSs2s.asmx?WSDL'
-      end
-
       # SOAP Client operations:
       # => [:call_refund_s2_s, :call_read_trx_s2_s, :call_pagam_s2_s, :call_delete_s2_s, :call_settle_s2_s, :call_verifycard_s2_s, :call_check_carta_s2_s, :call_renounce, :call_request_token_s2_s, :call_delete_token_s2_s]
-      @client = Savon.client(:wsdl => url)
+      @client = Savon.client(:wsdl => URL[Gestpay.config.environment])
     end
 
     def soap_options(data)
@@ -43,7 +41,6 @@ module Gestpay
         :with_auth => verify ? 'Y' : 'N'
       }
       response = @client.call(:call_request_token_s2_s, soap_options(data.merge(opts)))
-      result = {}
       response_content = response.body[:call_request_token_s2_s_response][:call_request_token_s2_s_result][:gest_pay_s2_s]
       Result::TokenRequest.new(response_content)
     end

@@ -1,22 +1,20 @@
 module Gestpay
   class Digest
 
+    URL = {
+      :test       => 'https://testecomm.sella.it/gestpay/gestpayws/WSCryptDecrypt.asmx?WSDL',
+      :production => 'https://ecomms2s.sella.it/gestpay/gestpayws/WSCryptDecrypt.asmx?WSDL'
+    }
+
     def config
       Gestpay.config
     end
 
     attr_accessor :client
     def initialize
-      url = case Gestpay.config.environment
-      when :test
-        'https://testecomm.sella.it/gestpay/gestpayws/WSCryptDecrypt.asmx?WSDL'
-      when :production
-        'https://ecomms2s.sella.it/gestpay/gestpayws/WSCryptDecrypt.asmx?WSDL'
-      end
-
       # SOAP Client operations:
       # => [:encrypt, :decrypt]
-      @client = Savon.client(:wsdl => url)
+      @client = Savon.client(:wsdl => URL[Gestpay.config.environment])
     end
 
     def soap_options(data)
