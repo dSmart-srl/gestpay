@@ -39,15 +39,12 @@ module Gestpay
 
     def request_token(data, verify=true)
       opts = {
-        request_token: 'MASKEDPAN',
-        with_auth: verify ? 'Y' : 'N'
+        :request_token => 'MASKEDPAN',
+        :with_auth => verify ? 'Y' : 'N'
       }
       response = @client.call(:call_request_token_s2_s, soap_options(data.merge(opts)))
       result = {}
       response_content = response.body[:call_request_token_s2_s_response][:call_request_token_s2_s_result][:gest_pay_s2_s]
-      # result[:token] = response_content.delete(:token)
-      # result[:info] = response_content
-      # result
       Result::TokenRequest.new(response_content)
     end
 
