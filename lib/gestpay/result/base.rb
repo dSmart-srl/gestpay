@@ -13,7 +13,7 @@ module Gestpay
       end
 
       def error
-        "Error #{data[:error_code]}: #{data[:error_description]}"
+        "Error #{ error_code }: #{ error_description }" if error_code
       end
 
       def method_missing(method_name, *args)
