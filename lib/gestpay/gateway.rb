@@ -33,19 +33,8 @@ module Gestpay
       # Custom info must be enabled on Gestpay backoffice interface, by adding new parameters
       data[:custom_info] = data[:custom_info].to_query.gsub('&', '*P1*') if data[:custom_info]
       response = @client.call(:call_pagam_s2_s, soap_options(data))
-      response_hash = response.body[:call_pagam_s2_s_response][:call_pagam_s2_s_result][:gest_pay_s2_s]
-      if response_hash[:transaction_result] != 'OK'
-        case response_hash[:error_code]
-        when '8006'
-          raise Gestpay::Error::VerifyVisa.new(response_hash)
-        else
-          raise Gestpay::Error::FailedDigest.new(response_hash[:error_code], response_hash[:error_description])
-        end
-      end
-      result = {
-        :amount => BigDecimal(response_hash.delete(:amount)),
-        :info   => response_hash
-      }
+      response_content = response.body[:call_pagam_s2_s_response][:call_pagam_s2_s_result][:gest_pay_s2_s]
+      Result::Payment.new(response_content)
     end
 
     def request_token(data, verify=true)
@@ -55,11 +44,11 @@ module Gestpay
       }
       response = @client.call(:call_request_token_s2_s, soap_options(data.merge(opts)))
       result = {}
-      response_hash = response.body[:call_request_token_s2_s_response][:call_request_token_s2_s_result][:gest_pay_s2_s]
-      raise Gestpay::Error::FailedDigest.new(response_hash[:transaction_error_code], response_hash[:transaction_error_description]) unless response_hash[:transaction_result] == 'OK'
-      result[:token] = response_hash.delete(:token)
-      result[:info] = response_hash
-      result
+      response_content = response.body[:call_request_token_s2_s_response][:call_request_token_s2_s_result][:gest_pay_s2_s]
+      # result[:token] = response_content.delete(:token)
+      # result[:info] = response_content
+      # result
+      Result::TokenRequest.new(response_content)
     end
 
   end

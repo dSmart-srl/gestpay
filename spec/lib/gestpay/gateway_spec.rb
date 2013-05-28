@@ -29,7 +29,8 @@ describe Gestpay::Gateway do
           }
         }
         result = gateway.payment(hash)
-        result[:amount].should == 0.02
+        result.should be_success
+        result.amount.should == 0.02
       end
     end
 
@@ -39,11 +40,8 @@ describe Gestpay::Gateway do
         hash = {
           :card_number => '4556541926187165'
         }
-        expect {
-          gateway.payment(hash)
-        }.to raise_error(
-          Gestpay::Error::VerifyVisa
-        )
+        result = gateway.payment(hash)
+        result.should be_verify_by_visa
       end
     end
 
@@ -55,12 +53,9 @@ describe Gestpay::Gateway do
           :shop_transaction_id => '12',
           :card_number         => '5432123456789012'
         }
-        expect {
-          gateway.payment(hash)
-        }.to raise_error(
-          Gestpay::Error::FailedDigest,
-          'Error 74: Autorizzazione negata'
-        )
+        result = gateway.payment(hash)
+        result.should_not be_success
+        result.error.should == 'Error 74: Autorizzazione negata'
       end
     end
 
@@ -73,7 +68,8 @@ describe Gestpay::Gateway do
           :token_value         => '53QWERTYU0I90987'
         }
         result = gateway.payment(hash)
-        result[:amount].should == 0.02
+        result.should be_success
+        result.amount.should == 0.02
       end
     end
 
@@ -91,7 +87,7 @@ describe Gestpay::Gateway do
         }
         # This returned ok as we didn't verify the card with the false parameter
         result = gateway.request_token(hash, false)
-        result[:token].should == "45OGBX64451Y7165"
+        result.token.should == "45OGBX64451Y7165"
         # result[:info] also returned
       end
     end
@@ -105,12 +101,8 @@ describe Gestpay::Gateway do
           :expiry_year  => '20',
           :cvv         => "123",
         }
-        expect {
-          gateway.request_token(hash)
-        }.to raise_error(
-          Gestpay::Error::FailedDigest,
-          'Error 405: Autorizzazione negata dai circuiti'
-        )
+        result = gateway.request_token(hash)
+        result.error.should == "Error 405: Autorizzazione negata dai circuiti"
       end
     end
   end

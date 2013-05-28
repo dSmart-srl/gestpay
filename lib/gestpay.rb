@@ -5,6 +5,7 @@ require "gestpay/version"
 require "gestpay/digest"
 require "gestpay/gateway"
 require "gestpay/configuration"
+require "gestpay/result"
 
 require "gestpay/error"
 
@@ -17,9 +18,5 @@ module Gestpay
   def self.config
     @config ||= Configuration.new
   end
-
-  # def self.client(options={})
-  #   @client ||= Client.new(options)
-  # end
 
 end
