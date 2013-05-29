@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "gestpay"
   spec.version       = Gestpay::VERSION
   spec.authors       = ["Alessandro Mencarini", "Maurizio de Magnis"]
-  spec.email         = ["a.mencarini@freegoweb.it", "maurizio.demagnis@momit.it"]
+  spec.email         = ["a.mencarini@freegoweb.it", "maurizio.demagnis@gmail.com"]
   spec.description   = %q{GestPay services wrapper}
-  spec.summary       = %q{The gem will help with BancaSella payment webservices (initially the WSCryptDecrypt)}
+  spec.summary       = %q{The gem will help with BancaSella payment webservices}
   spec.homepage      = "http://momitians.github.io/gestpay"
   spec.license       = "MIT"
 

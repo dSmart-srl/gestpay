@@ -21,7 +21,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You can setup the gem in a Rails project using an initializer like this:
+
+```ruby
+Gestpay.setup do |config|
+  config.account = 'GESPAY12345'
+  config.environment = :test # default, change it to :production when ready
+end
+```
+
+or using an export:
+
+```shell
+export GESTPAY_ACCOUNT=GESPAY12345
+export GESTPAY_ENVIRONMENT=test
+```
+
+You then have two different classes: `Gestpay::Digest` will help with the Crypt/Decrypt web service, while `Gestpay::Gateway` with the server-to-server webservice operations.
 
 ## Contributing
 

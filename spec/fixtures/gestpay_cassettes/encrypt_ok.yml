@@ -113,7 +113,7 @@ http_interactions:
         />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"WSCryptDecryptSoap12\" binding=\"tns:WSCryptDecryptSoap12\">\r\n
         \     <soap12:address location=\"https://testecomm.sella.it/gestpay/gestpayws/WSCryptDecrypt.asmx\"
         />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
-    http_version: 
+    http_version:
   recorded_at: Fri, 17 May 2013 09:06:27 GMT
 - request:
     method: post
@@ -122,7 +122,7 @@ http_interactions:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ecomm.sella.it/"
-        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:Encrypt><tns:shopLogin>GESPAY57135</tns:shopLogin><tns:uicCode>242</tns:uicCode><tns:amount>0.01</tns:amount><tns:shopTransactionId>123</tns:shopTransactionId><tns:languageId>1</tns:languageId><tns:buyerName>Test
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:Encrypt><tns:shopLogin>GESPAY12345</tns:shopLogin><tns:uicCode>242</tns:uicCode><tns:amount>0.01</tns:amount><tns:shopTransactionId>123</tns:shopTransactionId><tns:languageId>1</tns:languageId><tns:buyerName>Test
         Customer</tns:buyerName><tns:buyerEmail>test@example.com</tns:buyerEmail></tns:Encrypt></env:Body></env:Envelope>
     headers:
       Soapaction:
@@ -165,6 +165,6 @@ http_interactions:
       string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><EncryptResponse
         xmlns="https://ecomm.sella.it/"><EncryptResult><GestPayCryptDecrypt xmlns=""><TransactionType>ENCRYPT</TransactionType><TransactionResult>OK</TransactionResult><CryptDecryptString>i3eUhxjb5HNxldtVSXb4qxaYva_uWKNn6BSQgRXkBUWKjoQvU6IbNgocbJYSr2LZ3FdnsvnpXH8KQ1*lizVn5LmWYMmN7JA0wMpuURkqftlBYPdjzXMmOomRrUenCF1JzE0j1ugNdSIbY7rrrUVxYAtjdvkKmyKrtLOiDuTohJsWaWGuIH4y_KUUa5cWcY3Oqz8eSjVfiWr8RUeAYCVmeA</CryptDecryptString><ErrorCode>0</ErrorCode><ErrorDescription></ErrorDescription></GestPayCryptDecrypt></EncryptResult></EncryptResponse></soap:Body></soap:Envelope>
-    http_version: 
+    http_version:
   recorded_at: Fri, 17 May 2013 09:06:27 GMT
 recorded_with: VCR 2.4.0

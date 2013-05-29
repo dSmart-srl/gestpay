@@ -346,7 +346,7 @@ http_interactions:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ecomms2s.sella.it/"
-        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:callPagamS2S><tns:shopLogin>GESPAY57135</tns:shopLogin><tns:uicCode>242</tns:uicCode><tns:languageId>1</tns:languageId><tns:amount>0.02</tns:amount><tns:shopTransactionId>12</tns:shopTransactionId><tns:cardNumber>5364000000000987</tns:cardNumber><tns:expiryMonth>01</tns:expiryMonth><tns:expiryYear>20</tns:expiryYear><tns:cvv>753</tns:cvv><tns:buyerName>Test Customer</tns:buyerName><tns:buyerEmail>test@example.com</tns:buyerEmail><tns:customInfo>payment_id=15*P1*user_id=12</tns:customInfo></tns:callPagamS2S></env:Body></env:Envelope>
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:callPagamS2S><tns:shopLogin>GESPAY12345</tns:shopLogin><tns:uicCode>242</tns:uicCode><tns:languageId>1</tns:languageId><tns:amount>0.02</tns:amount><tns:shopTransactionId>12</tns:shopTransactionId><tns:cardNumber>5364000000000987</tns:cardNumber><tns:expiryMonth>01</tns:expiryMonth><tns:expiryYear>20</tns:expiryYear><tns:cvv>753</tns:cvv><tns:buyerName>Test Customer</tns:buyerName><tns:buyerEmail>test@example.com</tns:buyerEmail><tns:customInfo>payment_id=15*P1*user_id=12</tns:customInfo></tns:callPagamS2S></env:Body></env:Envelope>
     headers:
       Soapaction:
       - '"https://ecomms2s.sella.it/callPagamS2S"'

@@ -337,7 +337,7 @@ http_interactions:
         />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"WSs2sSoap12\" binding=\"tns:WSs2sSoap12\">\r\n
         \     <soap12:address location=\"https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx\"
         />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
-    http_version: 
+    http_version:
   recorded_at: Tue, 21 May 2013 12:01:52 GMT
 - request:
     method: post
@@ -346,7 +346,7 @@ http_interactions:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://ecomms2s.sella.it/"
-        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:CallRequestTokenS2S><tns:shopLogin>GESPAY57135</tns:shopLogin><tns:cardNumber>4556541926187165</tns:cardNumber><tns:expiryMonth>12</tns:expiryMonth><tns:expiryYear>20</tns:expiryYear><tns:cvv>123</tns:cvv><tns:requestToken>MASKEDPAN</tns:requestToken><tns:withAuth>Y</tns:withAuth></tns:CallRequestTokenS2S></env:Body></env:Envelope>
+        xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Body><tns:CallRequestTokenS2S><tns:shopLogin>GESPAY12345</tns:shopLogin><tns:cardNumber>4556541926187165</tns:cardNumber><tns:expiryMonth>12</tns:expiryMonth><tns:expiryYear>20</tns:expiryYear><tns:cvv>123</tns:cvv><tns:requestToken>MASKEDPAN</tns:requestToken><tns:withAuth>Y</tns:withAuth></tns:CallRequestTokenS2S></env:Body></env:Envelope>
     headers:
       Soapaction:
       - '"https://ecomms2s.sella.it/CallRequestTokenS2S"'
@@ -395,6 +395,6 @@ http_interactions:
         Classic]]></ProductDescription><ProductType>Credit</ProductType><CheckDigit>OK</CheckDigit><CheckDigitDescription>CheckDigit
         VALID</CheckDigitDescription><CheckDate>OK</CheckDate><CheckDateDescription>DATE
         VALID</CheckDateDescription><EnrolledCode>Y</EnrolledCode><EnrolledDescription>ENROLLED</EnrolledDescription><Prepaid></Prepaid><Token></Token><TokenExpiryMonth></TokenExpiryMonth><TokenExpiryYear></TokenExpiryYear></GestPayS2S></CallRequestTokenS2SResult></CallRequestTokenS2SResponse></soap:Body></soap:Envelope>
-    http_version: 
+    http_version:
   recorded_at: Tue, 21 May 2013 12:01:55 GMT
 recorded_with: VCR 2.4.0
