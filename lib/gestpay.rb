@@ -2,6 +2,7 @@ require 'savon'
 require 'active_support/core_ext'
 
 require "gestpay/version"
+require "gestpay/custom_info"
 require "gestpay/digest"
 require "gestpay/gateway"
 require "gestpay/configuration"
