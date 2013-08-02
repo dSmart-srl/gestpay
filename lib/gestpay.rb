@@ -7,6 +7,7 @@ require "gestpay/digest"
 require "gestpay/gateway"
 require "gestpay/configuration"
 require "gestpay/result"
+require "gestpay/iframe"
 
 require "gestpay/error"
 
