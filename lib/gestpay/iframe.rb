@@ -6,12 +6,8 @@ module Gestpay
       :production => 'https://ecomm.sella.it/pagam/pagam.aspx'      
     }
 
-    def config
-      Gestpay.config
-    end
-
-    def fallback_url
-      FALLBACK_URL[config.environment]
+    def self.fallback_url
+      FALLBACK_URL[Gestpay.config.environment]
     end
 
   end
