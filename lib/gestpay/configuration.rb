@@ -14,12 +14,13 @@ module Gestpay
       'ITA' => '1'
     }
 
-    attr_accessor :environment, :account, :currency, :language
+    attr_accessor :environment, :account, :currency, :language, :proxy
     def initialize
       @environment = ENV['GESTPAY_ENVIRONMENT'] || :test
       @account     = ENV['GESTPAY_ACCOUNT']
       @currency    = 'EUR'
       @language    = 'ITA'
+      @proxy       = ENV['GESTPAY_PROXY']
     end
 
     def currency_code
