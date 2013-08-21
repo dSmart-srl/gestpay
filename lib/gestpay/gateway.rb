@@ -1,6 +1,8 @@
 module Gestpay
   class Gateway
 
+    include Gestpay::CustomInfo
+
     URL = {
       :test       => 'https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx?WSDL',
       :production => 'https://ecomms2s.sella.it/gestpay/gestpayws/WSs2s.asmx?WSDL'
@@ -29,7 +31,7 @@ module Gestpay
 
     def payment(data)
       # Custom info must be enabled on Gestpay backoffice interface, by adding new parameters
-      data[:custom_info] = data[:custom_info].to_query.gsub('&', '*P1*') if data[:custom_info]
+      data[:custom_info] = gestpay_encode(data[:custom_info]) if data[:custom_info]
       response = @client.call(:call_pagam_s2_s, soap_options(data))
       response_content = response.body[:call_pagam_s2_s_response][:call_pagam_s2_s_result][:gest_pay_s2_s]
       Result::Payment.new(response_content)
