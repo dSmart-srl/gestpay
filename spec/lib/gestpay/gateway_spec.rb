@@ -102,4 +102,27 @@ describe Gestpay::Gateway do
     end
   end
 
+  describe '#settle' do
+    let(:hash) do
+      {
+        :bank_trans_id  => '2',
+        :amount         => '20.00'
+      }
+    end
+
+    context "with an ok data hash" do
+      before { VCR.insert_cassette 'settle_ok', :record => :new_episodes }
+      let(:result) { gateway.settle(hash) }
+
+      it { should be_success }
+    end
+
+    context "with an invalid credit card" do
+      before { VCR.insert_cassette 'settle_ko', :record => :new_episodes }
+      let(:result) { gateway.settle(hash) }
+
+      its(:error) { should == "Error 2016: Campi BANKTRANSACTIONID e SHOPTRANSACTIONID non valorizzati" }
+    end
+  end
 end
+

@@ -51,3 +51,4 @@ You then have two different classes: `Gestpay::Digest` will help with the Crypt/
 ## Licence
 
 Released under the [MIT License](http://www.opensource.org/licenses/MIT). © 2013 [Momit S.r.l.](http://momit.it/)
+
