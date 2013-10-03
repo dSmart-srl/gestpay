@@ -23,13 +23,15 @@ module Gestpay
       @client = Savon.client(savon_options)
     end
 
-    def soap_options(data)
+    def soap_options(data, options = [:shop_login, :uic_code, :language_id])
+      configuration_options = {
+        :shop_login  => config.account,
+        :uic_code    => config.currency_code,
+        :language_id => config.language_code
+      }
+
       {
-        :message => {
-          :shop_login  => config.account,
-          :uic_code    => config.currency_code,
-          :language_id => config.language_code
-        }.merge(data)
+        :message => configuration_options.slice(*options).merge(data)
       }
     end
 
@@ -51,5 +53,17 @@ module Gestpay
       Result::TokenRequest.new(response_content)
     end
 
+    def settle(data)
+      data[:bank_trans_ID] ||= data.delete(:bank_trans_id)
+      data[:shop_trans_ID] ||= data.delete(:shop_trans_id)
+
+      data = Hash[data.select { |k, v| v.present? }]
+
+      response = @client.call(:call_settle_s2_s, soap_options(data, [:shop_login, :uic_code]))
+      response_content = response.body[:call_settle_s2_s_response][:call_settle_s2_s_result][:gest_pay_s2_s]
+      Result::Settle.new(response_content)
+    end
+
   end
 end
+
