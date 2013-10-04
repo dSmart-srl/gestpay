@@ -124,5 +124,27 @@ describe Gestpay::Gateway do
       its(:error) { should == "Error 2016: Campi BANKTRANSACTIONID e SHOPTRANSACTIONID non valorizzati" }
     end
   end
+
+  describe '#delete' do
+    let(:hash) do
+      {
+        :bank_transaction_id  => '7',
+      }
+    end
+
+    context "with an ok data hash" do
+      before { VCR.insert_cassette 'delete_ok', :record => :new_episodes }
+      let(:result) { gateway.delete(hash) }
+
+      it { should be_success }
+    end
+
+    context "with an invalid credit card" do
+      before { VCR.insert_cassette 'delete_ko', :record => :new_episodes }
+      let(:result) { gateway.delete(hash) }
+
+      its(:error) { should == "Error 2017: Transazione non cancellabile" }
+    end
+  end
 end
 
