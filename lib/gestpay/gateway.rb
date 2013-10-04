@@ -64,6 +64,16 @@ module Gestpay
       Result::Settle.new(response_content)
     end
 
+    def delete(data)
+      data[:Bank_transaction_id] ||= data.delete(:bank_transaction_id)
+      data[:Shop_transaction_id] ||= data.delete(:shop_transaction_id)
+
+      data = Hash[data.select { |k, v| v.present? }]
+
+      response = @client.call(:call_delete_s2_s, soap_options(data, [:shop_login]))
+      response_content = response.body[:call_delete_s2_s_response][:call_delete_s2_s_result][:gest_pay_s2_s]
+      Result::Delete.new(response_content)
+    end
   end
 end
 
