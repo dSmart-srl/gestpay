@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx?WSDL
+    uri: https://sandbox.gestpay.net/gestpay/gestpayws/WSs2s.asmx?WSDL
     body:
       encoding: US-ASCII
       string: ''
@@ -333,15 +333,15 @@ http_interactions:
         />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
         />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
         \ <wsdl:service name=\"WSs2s\">\r\n    <wsdl:port name=\"WSs2sSoap\" binding=\"tns:WSs2sSoap\">\r\n
-        \     <soap:address location=\"https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx\"
+        \     <soap:address location=\"https://sandbox.gestpay.net/gestpay/gestpayws/WSs2s.asmx\"
         />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"WSs2sSoap12\" binding=\"tns:WSs2sSoap12\">\r\n
-        \     <soap12:address location=\"https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx\"
+        \     <soap12:address location=\"https://sandbox.gestpay.net/gestpay/gestpayws/WSs2s.asmx\"
         />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
     http_version:
   recorded_at: Tue, 21 May 2013 13:21:36 GMT
 - request:
     method: post
-    uri: https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx
+    uri: https://sandbox.gestpay.net/gestpay/gestpayws/WSs2s.asmx
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"

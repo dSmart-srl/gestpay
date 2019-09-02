@@ -2,12 +2,12 @@ module Gestpay
   class Iframe
 
     FALLBACK_URL = {
-      :test       => 'https://testecomm.sella.it/pagam/pagam.aspx',
+      :test       => 'https://sandbox.gestpay.net/pagam/pagam.aspx',
       :production => 'https://ecomm.sella.it/pagam/pagam.aspx'
     }
 
     PAYMENT_3D_URL = {
-      :test       => 'https://testecomm.sella.it/pagam/pagam3d.aspx',
+      :test       => 'https://sandbox.gestpay.net/pagam/pagam3d.aspx',
       :production => 'https://ecomm.sella.it/pagam/pagam3d.aspx'
     }
 

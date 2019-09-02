@@ -4,7 +4,7 @@ module Gestpay
     include Gestpay::CustomInfo
 
     URL = {
-      :test       => 'https://testecomm.sella.it/gestpay/gestpayws/WSs2s.asmx?WSDL',
+      :test       => 'https://sandbox.gestpay.net/gestpay/gestpayws/WSs2s.asmx?WSDL',
       :production => 'https://ecomms2s.sella.it/gestpay/gestpayws/WSs2s.asmx?WSDL'
     }
 
