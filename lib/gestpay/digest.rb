@@ -39,8 +39,16 @@ module Gestpay
       Result::Encrypt.new(response_content)
     end
 
-    def decrypt(string)
-      response = @client.call(:decrypt, soap_options({'CryptedString' => string}))
+    # def decrypt(string)
+    #   response = @client.call(:decrypt, soap_options({'CryptedString' => string}))
+    #   response_content = response.body[:decrypt_response][:decrypt_result][:gest_pay_crypt_decrypt]
+    #   response_content[:custom_info] = gestpay_decode(response_content[:custom_info]) if response_content[:custom_info]
+    #   Result::Decrypt.new(response_content)
+    # end
+
+    def decrypt(data)
+      args = data.is_a?(String) ? {'CryptedString' => data} : data
+      response = @client.call(:decrypt, soap_options(args))
       response_content = response.body[:decrypt_response][:decrypt_result][:gest_pay_crypt_decrypt]
       response_content[:custom_info] = gestpay_decode(response_content[:custom_info]) if response_content[:custom_info]
       Result::Decrypt.new(response_content)
